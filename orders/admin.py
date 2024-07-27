@@ -1,4 +1,6 @@
+# orders/admin.py
 from django.contrib import admin
-from .models import Order
+from .models import User, Order
 
+admin.site.register(User)
 admin.site.register(Order)

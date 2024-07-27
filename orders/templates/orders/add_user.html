@@ -1,7 +1,7 @@
-<!-- templates/orders/add_order.html -->
+<!-- templates/orders/add_user.html -->
 {% extends 'orders/base.html' %}
 {% block content %}
-<h1>Add Order</h1>
+<h1>Add User</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
