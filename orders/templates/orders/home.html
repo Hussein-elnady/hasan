@@ -1,0 +1,36 @@
+{% extends 'orders/base.html' %}
+{% block content %}
+<h1>Orders</h1>
+<table>
+    <tr>
+        <th>Serial</th>
+        <th>Date</th>
+        <th>Product Name</th>
+        <th>Recipient Name</th>
+        <th>Phone</th>
+        <th>Alternative Phone</th>
+        <th>Governorate</th>
+        <th>Route</th>
+        <th>Address</th>
+        <th>Shipping Price</th>
+        <th>Price</th>
+        <th>Notes</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.serial }}</td>
+        <td>{{ order.date }}</td>
+        <td>{{ order.product_name }}</td>
+        <td>{{ order.recipient_name }}</td>
+        <td>{{ order.phone }}</td>
+        <td>{{ order.alternative_phone }}</td>
+        <td>{{ order.governorate }}</td>
+        <td>{{ order.route }}</td>
+        <td>{{ order.address }}</td>
+        <td>{{ order.shipping_price }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.notes }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
