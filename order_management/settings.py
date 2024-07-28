@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'order_management',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'PASSWORD': 'Ha@123654',
         'HOST': 'localhost',
         'PORT': '5432',
     }

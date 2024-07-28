@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 
 class User(AbstractUser):
@@ -7,7 +7,18 @@ class User(AbstractUser):
         ('end_user', 'End User'),
     )
     role = models.CharField(max_length=20, choices=ROLES)
-
+    
+    groups = models.ManyToManyField(
+        Group,
+        related_name='orders_user_set',  # Add related_name to avoid clashes
+        blank=True
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name='orders_user_permissions',  # Add related_name to avoid clashes
+        blank=True
+    )
+    
 class Order(models.Model):
     serial = models.AutoField(primary_key=True)
     date = models.DateField(auto_now_add=True)
